@@ -1,0 +1,55 @@
+/* app css stylesheet */
+$background-blue: #1a1e5a;
+@mixin gradientMixin($args...){
+  background: -webkit-gradient(linear,left bottom,right top,color-stop(0,#1a1e5a),color-stop(100%,#122d98));
+  background: -webkit-linear-gradient($args);
+  background: linear-gradient($args);
+}
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+  &:before{
+    content: "[]";
+  }
+  &:after{
+    content: "]";
+  }
+  li>{
+    display: inline;
+  }
+  li + li:before {
+    content: "|";
+    padding-right: 0.3em;
+  }
+}
+
+nav{
+  margin: 0;
+  border-width: 1px 0;
+  font-family: 'myriad-light';
+  background: $background-blue;
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 0;
+  border: 1px solid transparent;
+  @include gradientMixin(45deg,#1a1e5a 0,#122d98 100%);
+  .main-nav{
+    color: white;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    &__list{
+      list-style: none;
+    }
+    &:after{
+      height: 3.5px;
+      z-index: 3;
+      display: block;
+      width: 100%;
+      position: absolute;
+      top: 50px
+    }
+  }
+}
