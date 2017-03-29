@@ -10,50 +10,57 @@ app.config(['$routeProvider', function($routeProvider) {
 }])
 
 app.controller('View1Ctrl', function($scope) {
+  $scope.navIsOpen = false;
   $scope.items = [
     {
       name: "item1",
-      arrowPosition: "left: 42%",
+      arrowPosition: "",
       selected: false,
+      arrowDirection: 'left',
       toggle: false
     },
     {
       name: "item2",
       arrowPosition: 0,
+      arrowDirection: '',
       selected: false,
       toggle: false
     },
     {
       name: "item3",
       arrowPosition: 0,
+      arrowDirection: '',
       selected: false,
       toggle: false
     },
     {
       name: "item4",
       arrowPosition: 0,
+      arrowDirection: '',
       selected: false,
       toggle: false
     },
     {
       name: "item5",
       arrowPosition: 0,
+      arrowDirection: '',
       selected: false,
       toggle: false
     }
-  ]
+  ];
+
   $scope.showSubNav = function($event, itemName){
-    console.log("This is event ", $event.pageX);
+    console.log("This is event ", $event.pageX, " event is ", $event);
     $scope.items.forEach(function(item){
       if(itemName === item.name){
-        console.log("Yess!!!!!");
+        item.selected = true;
         item.toggle = !item.toggle;
-        // item.arrowPosition = "left: " + $event.pageX + "px";
+        item.arrowPosition = $event.target.offsetLeft + ($event.target.offsetWidth / 2.5);
       }else{
-        console.log("noooo");
+        item.selected = false;
+        item.toggle = false;
       }
     });
-    console.log("Yo ", $event, " and scope toggle is ", $scope.items);
   };
 });
 

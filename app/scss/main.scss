@@ -74,6 +74,7 @@ ul li{
     a.main-nav__anchor{
       display: block;
       color: white;
+      cursor: pointer;
       font-size: 0.8em;
       @include transitionMixin(0.5s color ease-in-out);
       &:hover{
@@ -106,9 +107,12 @@ ul li{
       padding: 0;
       display: inline-block;
     }
+    a{
+      cursor: pointer;
+    }
     &__parent-icon{
       color: orange;
-      font-size: 2em;
+      font-size: 1.85em;
       padding-left: 20%;
       -webkit-font-smoothing: antialiased;
       vertical-align: top;
@@ -120,7 +124,7 @@ ul li{
 .sub-nav{
   height: 0;
   display: none;
-  @include transitionMixin(0.3s height ease-in-out);
+  @include transitionMixin( display 0.25s ease-out);
   &--show{
     display: block;
     position: absolute;
@@ -131,6 +135,7 @@ ul li{
     padding: 0;
     top: 105%;
     height: 80px;
+    @include transitionMixin(display 0.25s ease-in);
     @include boxShadow(0px 8px 5px -1px rgba(0,0,0,0.1));
   }
   &__list{
@@ -202,7 +207,11 @@ ul li{
 }
 
 .arrow{
-  @mixin transitionMixin(all 0.5s ease);
+  @include transitionMixin(all 0.5s ease);
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 0;
   &:before{
     content: '';
     position: absolute;

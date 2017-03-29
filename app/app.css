@@ -52,6 +52,7 @@ ul li {
     .nav .main-nav a.main-nav__anchor {
       display: block;
       color: white;
+      cursor: pointer;
       font-size: 0.8em;
       transition: 0.5s color ease-in-out;
       -webkit-transition: 0.5s color ease-in-out;
@@ -79,9 +80,11 @@ ul li {
       margin: 0;
       padding: 0;
       display: inline-block; }
+    .nav-search a {
+      cursor: pointer; }
     .nav-search__parent-icon {
       color: orange;
-      font-size: 2em;
+      font-size: 1.85em;
       padding-left: 20%;
       -webkit-font-smoothing: antialiased;
       vertical-align: top;
@@ -90,9 +93,9 @@ ul li {
 .sub-nav {
   height: 0;
   display: none;
-  transition: 0.3s height ease-in-out;
-  -webkit-transition: 0.3s height ease-in-out;
-  -moz-transition: 0.3s height ease-in-out; }
+  transition: display 0.25s ease-out;
+  -webkit-transition: display 0.25s ease-out;
+  -moz-transition: display 0.25s ease-out; }
   .sub-nav--show {
     display: block;
     position: absolute;
@@ -103,6 +106,9 @@ ul li {
     padding: 0;
     top: 105%;
     height: 80px;
+    transition: display 0.25s ease-in;
+    -webkit-transition: display 0.25s ease-in;
+    -moz-transition: display 0.25s ease-in;
     -webkit-box-shadow: 0px 8px 5px -1px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 8px 5px -1px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 8px 5px -1px rgba(0, 0, 0, 0.1); }
@@ -166,17 +172,24 @@ ul li {
   border-bottom: 1px solid #1a1e5a;
   font-size: 0.8em; }
 
-.arrow:before {
-  content: '';
+.arrow {
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
   position: absolute;
-  left: 42%;
-  top: -25px;
+  top: 0;
   width: 0;
-  height: 0;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-bottom: 20px solid orange;
-  clear: both; }
+  height: 0; }
+  .arrow:before {
+    content: '';
+    position: absolute;
+    top: -25px;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid orange;
+    clear: both; }
 
 .nav-line {
   height: 5px;
