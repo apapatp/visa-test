@@ -1,20 +1,15 @@
 /* app css stylesheet */
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em; }
-  .menu:before {
-    content: "[]"; }
-  .menu:after {
-    content: "]"; }
-  .menu li > {
-    display: inline; }
-  .menu li + li:before {
-    content: "|";
-    padding-right: 0.3em; }
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+body {
+  background: #f7f7f7; }
 
-nav {
+a {
+  text-decoration: none; }
+
+ul li {
+  list-style: none; }
+
+.nav {
   margin: 0;
   border-width: 1px 0;
   font-family: 'myriad-light';
@@ -23,23 +18,200 @@ nav {
   min-height: 50px;
   margin-bottom: 0;
   border: 1px solid transparent;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -moz-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 20px;
+  box-sizing: border-box;
   background: -webkit-gradient(linear, left bottom, right top, color-stop(0, #1a1e5a), color-stop(100%, #122d98));
   background: -webkit-linear-gradient(45deg, #1a1e5a 0, #122d98 100%);
   background: linear-gradient(45deg, #1a1e5a 0, #122d98 100%); }
-  nav .main-nav {
+  .nav-logo {
+    width: 30%;
+    text-align: center;
+    padding-top: 28px; }
+    .nav-logo img {
+      height: 40px; }
+  .nav .main-nav {
+    width: 60%;
     color: white;
-    font-size: 14px;
+    font-size: 18px;
+    font-family: "Open Sans", sans-serif;
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: -moz-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-top: 5px;
+    justify-content: space-between; }
+    .nav .main-nav a.main-nav__anchor {
+      display: block;
+      color: white;
+      font-size: 0.8em;
+      transition: 0.5s color ease-in-out;
+      -webkit-transition: 0.5s color ease-in-out;
+      -moz-transition: 0.5s color ease-in-out; }
+      .nav .main-nav a.main-nav__anchor:hover {
+        color: orange; }
+    .nav .main-nav__list {
+      list-style: none;
+      width: 20%;
+      margin-top: 15px; }
+      .nav .main-nav__list a {
+        display: block;
+        width: 100%;
+        text-align: center; }
+    .nav .main-nav__mobile-list {
+      display: none; }
+  .nav-search {
+    width: 20%;
+    padding: 0 15px;
+    text-align: left; }
+    .nav-search .division {
+      width: 1px;
+      height: 3em;
+      background: lightgray;
+      margin: 0;
+      padding: 0;
+      display: inline-block; }
+    .nav-search__parent-icon {
+      color: orange;
+      font-size: 2em;
+      padding-left: 20%;
+      -webkit-font-smoothing: antialiased;
+      vertical-align: top;
+      margin-top: 6px; }
+
+.sub-nav {
+  height: 0;
+  display: none;
+  transition: 0.3s height ease-in-out;
+  -webkit-transition: 0.3s height ease-in-out;
+  -moz-transition: 0.3s height ease-in-out; }
+  .sub-nav--show {
+    display: block;
+    position: absolute;
+    background: white;
+    width: 100%;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    top: 105%;
+    height: 80px;
+    -webkit-box-shadow: 0px 8px 5px -1px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 8px 5px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 8px 5px -1px rgba(0, 0, 0, 0.1); }
+  .sub-nav__list {
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: -moz-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: flex;
     justify-content: space-between;
-  }
-    nav .main-nav__list {
-      list-style: none;
-    }
-    nav .main-nav:after {
-      height: 3.5px;
-      z-index: 3;
+    width: 70%;
+    text-align: center;
+    margin: 15px auto;
+    color: #1a1e5a; }
+    .sub-nav__list li a {
       display: block;
-      width: 100%;
-      position: absolute;
-      top: 50px;
-    }
+      color: #1a1e5a; }
+      .sub-nav__list li a:hover {
+        text-decoration-color: #1a1e5a;
+        text-decoration: underline; }
+      .sub-nav__list li a i {
+        font-size: 1.5em;
+        display: block;
+        padding-bottom: 5px; }
+      .sub-nav__list li a span {
+        font-size: 0.8em; }
+
+.search-form, .search-common {
+  margin: 10px auto;
+  width: 80%; }
+
+.search-form {
+  margin: 5px auto;
+  width: 80%;
+  position: relative; }
+  .search-form__input {
+    width: 100%;
+    padding: 10px 30px;
+    box-sizing: border-box;
+    color: black;
+    font-size: 14px; }
+  .search-form__icon {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    font-size: 22px;
+    padding: 0 5px;
+    color: lightgray; }
+  .search-form__submit {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    color: gray; }
+
+.search-common {
+  border-bottom: 1px solid #1a1e5a;
+  font-size: 0.8em; }
+
+.arrow:before {
+  content: '';
+  position: absolute;
+  left: 42%;
+  top: -25px;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid orange;
+  clear: both; }
+
+.nav-line {
+  height: 5px;
+  z-index: 3;
+  display: block;
+  width: 100%;
+  background: #ff9900;
+  background: -moz-linear-gradient(left, #ff9900 0%, #f1e767 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, #feb645), color-stop(100%, #f1e767));
+  background: -webkit-linear-gradient(left, #ff9900 0%, #f1e767 100%);
+  background: -o-linear-gradient(left, #ff9900 0%, #f1e767 100%);
+  background: -ms-linear-gradient(left, #ff9900 0%, #f1e767 100%);
+  background: linear-gradient(to right, #ff9900 0%, #f1e767 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feb645', endColorstr='#f1e767', GradientType=1 ); }
+
+/* media queries */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .nav .main-nav {
+    width: 65% !important; }
+    .nav .main-nav__anchor {
+      font-size: 0.7em !important; } }
+
+@media (max-width: 768px) {
+  .main-nav__list {
+    display: none !important; }
+  .main-nav__mobile-list {
+    display: block !important;
+    margin-top: 14px;
+    cursor: pointer;
+    width: 50%;
+    text-align: right; }
+    .main-nav__mobile-list i {
+      font-size: 25px; }
+  .nav {
+    justify-content: space-between; }
+  .nav-search {
+    width: 50% !important;
+    text-align: center; } }

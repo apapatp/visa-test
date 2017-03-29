@@ -1,25 +1,178 @@
-<nav role="navigation">
+<nav role="navigation" class="nav">
+  <div class="nav-logo">
+    <a href="#">
+      <img src="assets/logo.png" alt="Visa logo">
+    </a>
+  </div>
   <ul class="main-nav">
-    <li class="main-nav__list main-nav__list--icon">
-      <a href="#">
-        <img [src]="'../assets/logo.png'" alt="">
-      </a>
-    </li>
     <li class="main-nav__list">
-      <a href="#">Pay With Visa</a>
-      <div class="sub-nav">
-
+      This is items {{items[0].toggle}}
+      <a href="#" class="main-nav__anchor" ng-click="showSubNav($event, 'item1')">Pay With Visa</a>
+      <div class="sub-nav" ng-class="{'sub-nav--show': items[0].toggle}">
+        <div class="arrow" ng-style="items[0].arrowPosition"></div>
+        <!-- <subnav></subnav> -->
+        <ul class="sub-nav__list">
+          <li>
+            <a href="#">
+              <i class="fa fa-cc-visa"></i>
+              <span>Visa Checkout</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-credit-card"></i>
+              <span>Find a Card</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-dollar"></i>
+              <span>Visa Offers + Perks</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-mobile-phone"></i>
+              <span>Mobile Payments</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-lightbulb-o"></i>
+              <span>Payment Technology</span>
+            </a>
+          </li>
+        </ul>
       </div>
     </li>
-    <li class="main-nav__list">Partner With Us</li>
-    <li class="main-nav__list">Run Your Business</li>
-    <li class="main-nav__list">Visa Everywhere</li>
     <li class="main-nav__list">
-      <i class="fa fa-search"></i>
+      <a href="#" class="main-nav__anchor">Partner With Us</a>
+      <div class="sub-nav">
+        <ul class="sub-nav__list">
+          <li>
+            <a href="#">
+              <i class="fa fa-cc-visa"></i>
+              <span>Visa Checkout</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-credit-card"></i>
+              <span>Find a Card</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-dollar"></i>
+              <span>Visa Offers + Perks</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-mobile-phone"></i>
+              <span>Mobile Payments</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-lightbulb-o"></i>
+              <span>Payment Technology</span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </li>
+    </li>
+    <li class="main-nav__list">
+      <a href="#" class="main-nav__anchor">Run Your Business</a>
+      <div class="sub-nav">
+        <ul class="sub-nav__list">
+          <li>
+            <a href="#">
+              <i class="fa fa-cc-visa"></i>
+              <span>Visa Checkout</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-credit-card"></i>
+              <span>Find a Card</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-dollar"></i>
+              <span>Visa Offers + Perks</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-mobile-phone"></i>
+              <span>Mobile Payments</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </li>
+    </li>
+    <li class="main-nav__list">
+      <a href="#" class="main-nav__anchor">Visa Everywhere</a>
+      <div class="sub-nav">
+        <ul class="sub-nav__list">
+          <li>
+            <a href="#">
+              <i class="fa fa-cc-visa"></i>
+              <span>Visa Checkout</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-credit-card"></i>
+              <span>Find a Card</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-dollar"></i>
+              <span>Visa Offers + Perks</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-mobile-phone"></i>
+              <span>Mobile Payments</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-lightbulb-o"></i>
+              <span>Payment Technology</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li class="main-nav__mobile-list">
+      <i class="fa fa-bars"></i>
+    </li>
+    <li class="nav-search" >
+      <div class="division">&nbsp;</div>
+      <a href="#">
+        <i class="fa fa-search nav-search__parent-icon"></i>
+      </a>
+      <div class="sub-nav">
+        <div class="search-form">
+          <input type="text" class="search-form__input" name="" value="" placeholder="Search Visa">
+          <i class="fa fa-search search-form__icon"></i>
+          <button type="button" name="button" class="search-form__submit">GO</button>
+        </div>
+        <div class="search-common">
+          <a href="#">Common Searches</a>
+        </div>
+      </div>
+    </div>
   </ul>
-  <!-- <div class="main-nav-line">&nbsp;</div> -->
-  <!-- <ul *ngIf="">
-
-  </ul> -->
 </nav>
+<div class="nav-line">
+  &nbsp;
+</div>
