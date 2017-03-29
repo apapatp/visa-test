@@ -57,6 +57,8 @@ ul li {
       transition: 0.5s color ease-in-out;
       -webkit-transition: 0.5s color ease-in-out;
       -moz-transition: 0.5s color ease-in-out; }
+      .nav .main-nav a.main-nav__anchor--selected {
+        color: orange; }
       .nav .main-nav a.main-nav__anchor:hover {
         color: orange; }
     .nav .main-nav__list {

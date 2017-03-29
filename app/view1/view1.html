@@ -6,10 +6,9 @@
   </div>
   <ul class="main-nav">
     <li class="main-nav__list">
-      <a class="main-nav__anchor" ng-click="showSubNav($event, 'item1')">Pay With Visa</a>
+      <a class="main-nav__anchor" ng-click="showSubNav($event, 'item1')" ng-class="{'main-nav__anchor--selected': items[0].selected && items[0].toggle}" resize>Pay With Visa</a>
       <div class="sub-nav" ng-class="{'sub-nav--show': items[0].selected && items[0].toggle}">
         <div class="arrow" ng-style="{left: items[0].arrowPosition + 'px'}"></div>
-        <!-- <subnav></subnav> -->
         <ul class="sub-nav__list">
           <li>
             <a href="#">
@@ -45,7 +44,7 @@
       </div>
     </li>
     <li class="main-nav__list">
-      <a class="main-nav__anchor" ng-click="showSubNav($event, 'item2')">Partner With Us</a>
+      <a class="main-nav__anchor" ng-click="showSubNav($event, 'item2')" ng-class="{'main-nav__anchor--selected': items[1].selected && items[1].toggle}" resize>Partner With Us</a>
       <div class="sub-nav" ng-class="{'sub-nav--show': items[1].selected && items[1].toggle }">
         <div class="arrow" ng-style="{left: items[1].arrowPosition + 'px'}"></div>
         <ul class="sub-nav__list">
@@ -84,7 +83,7 @@
     </li>
     </li>
     <li class="main-nav__list">
-      <a class="main-nav__anchor" ng-click="showSubNav($event, 'item3')">Run Your Business</a>
+      <a class="main-nav__anchor" ng-click="showSubNav($event, 'item3')" ng-class="{'main-nav__anchor--selected': items[2].selected && items[2].toggle}" resize>Run Your Business</a>
       <div class="sub-nav" ng-class="{'sub-nav--show': items[2].selected && items[2].toggle }">
         <div class="arrow" ng-style="{left: items[2].arrowPosition + 'px'}"></div>
         <ul class="sub-nav__list">
@@ -111,7 +110,7 @@
     </li>
     </li>
     <li class="main-nav__list">
-      <a class="main-nav__anchor" ng-click="showSubNav($event, 'item4')">Visa Everywhere</a>
+      <a class="main-nav__anchor" ng-click="showSubNav($event, 'item4')" ng-class="{'main-nav__anchor--selected': items[3].selected && items[3].toggle}" resize>Visa Everywhere</a>
       <div class="sub-nav" ng-class="{'sub-nav--show': items[3].selected && items[3].toggle }">
         <div class="arrow" ng-style="{left: items[3].arrowPosition + 'px'}"></div>
         <ul class="sub-nav__list">
@@ -147,7 +146,7 @@
     </li>
     <li class="nav-search" >
       <div class="division">&nbsp;</div>
-      <a ng-click="showSubNav($event, 'item5')">
+      <a ng-click="showSubNav($event, 'item5')" ng-class="{'main-nav__anchor--selected': items[4].selected && items[4].toggle}" resize>
         <i class="fa fa-search nav-search__parent-icon"></i>
       </a>
       <div class="sub-nav" ng-class="{'sub-nav--show': items[4].selected && items[4].toggle }">

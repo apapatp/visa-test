@@ -11,6 +11,7 @@ app.config(['$routeProvider', function($routeProvider) {
 
 app.controller('View1Ctrl', function($scope) {
   $scope.navIsOpen = false;
+  $scope.previousSeclect = {};
   $scope.items = [
     {
       name: "item1",
@@ -50,7 +51,7 @@ app.controller('View1Ctrl', function($scope) {
   ];
 
   $scope.showSubNav = function($event, itemName){
-    console.log("This is event ", $event.pageX, " event is ", $event);
+    var classScope = $scope;
     $scope.items.forEach(function(item){
       if(itemName === item.name){
         item.selected = true;
@@ -64,9 +65,20 @@ app.controller('View1Ctrl', function($scope) {
   };
 });
 
-// .directive('subnav', function($scope){
-//   restrict: "E",
-//   link: function($scope, element, attrs) {
-//     element.html('<div>Hello World</div>');
-//   }
-// });
+// app.directive('resize', [function($window) {
+//   // on window, change directive
+//     return function link($scope, element) {
+//       var window = angular.element($window);
+//       var container = element[0];
+//         $scope.$watch([
+//             function() { return window.width(); },
+//         ],  function(values) {
+//               // Handle resize event ...
+//               $scope.items.forEach(function(item){
+//                 if(item.selected && item.toggle){
+//                   item.arrowPosition = container.offsetLeft + (container.offsetWidth / 2.5);
+//                 }
+//               });
+//         });
+//     }
+// }]);

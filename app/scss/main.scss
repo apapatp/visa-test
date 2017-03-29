@@ -77,6 +77,9 @@ ul li{
       cursor: pointer;
       font-size: 0.8em;
       @include transitionMixin(0.5s color ease-in-out);
+      &--selected{
+        color: orange;
+      }
       &:hover{
         color: orange;
       }
